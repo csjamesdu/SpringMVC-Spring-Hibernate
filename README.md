@@ -10,5 +10,5 @@ Product List Functions:
 
 
 User List Functions: 
-  1.Basic CRUD operations
-  2.Throwing Exception in the middle of a batch insert to observe the function of declarative transaction configuration.
+  1. Basic CRUD operations
+  2. Throwing Exception in the middle of a batch insert to observe the function of declarative transaction configuration.
