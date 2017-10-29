@@ -3,7 +3,7 @@ CRUD integration of frameworks
 
 Portal: http://localhost:8080/springmvchibernate/index
 
-User List Functions:
+User List Functions: 
   1.Basic CRUD operations
   2.Throwing Exception in the middle of a batch insert to observe the function of declarative transaction configuration.
 
