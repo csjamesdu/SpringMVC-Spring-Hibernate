@@ -28,6 +28,11 @@ public class UserController {
 		this.userService = userService;
 	}
 	
+	@RequestMapping(value="/index")
+	public String indexControl() {
+		return "index";
+	}
+	
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
 	public String listUsers(Model model){
 		model.addAttribute("user", new User());

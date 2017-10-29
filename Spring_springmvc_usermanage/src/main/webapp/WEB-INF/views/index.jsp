@@ -21,6 +21,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <a href="http://localhost:8080/integration/listProduct">Product List</a>
+    <a href="http://localhost:8080/springmvchibernate/listproduct">Product List</a>
+    <br>
+    <br>
+    <a href="http://localhost:8080/springmvchibernate/users">User List</a>
   </body>
 </html>
