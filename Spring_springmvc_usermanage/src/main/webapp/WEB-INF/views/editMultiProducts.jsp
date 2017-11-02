@@ -25,7 +25,7 @@ function updateMultiProducts(){
 		<c:forEach items="${productList}" var="product" varStatus="status">
 			<tr>
 				
-				<td><input type="text" name="multiProducts[${status.index}].id" value="${product.id}" readonly="true"/></td>
+				<td><input type="text" name="multiProducts[${status.index}].id" value="${product.id}" readonly disabled/></td>
 				<td><input type="text" name="multiProducts[${status.index}].name" value="${product.name}"></td>
 				<td><input type="text" name="multiProducts[${status.index}].price" value="${product.price}"></td>				
 			</tr>
