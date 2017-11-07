@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.csjamesdu.springmvc.dto.ProductDTO;
 import com.csjamesdu.springmvc.model.Product;
-import com.csjamesdu.springmvc.model.ProductDTO;
 import com.csjamesdu.springmvc.service.ProductService;
 
 @Controller

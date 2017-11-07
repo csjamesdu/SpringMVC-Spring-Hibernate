@@ -1,6 +1,8 @@
-package com.csjamesdu.springmvc.model;
+package com.csjamesdu.springmvc.dto;
 
 import java.util.List;
+
+import com.csjamesdu.springmvc.model.Product;
 
 public class ProductDTO {
 	private List<Product> multiProducts;

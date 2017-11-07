@@ -2,49 +2,64 @@ package com.csjamesdu.springmvc.dao.impl;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.csjamesdu.springmvc.dao.ProductDao;
 import com.csjamesdu.springmvc.model.Product;
 
 @Repository("productDao")
-public class ProductDaoImpl extends HibernateTemplate implements ProductDao {
+public class ProductDaoImpl implements ProductDao {
 	
-	@Resource(name="hibernate4AnnotatedSessionFactory")
-	public void setSessionFactory(SessionFactory sessionFactory){
-		super.setSessionFactory(sessionFactory);
+	private SessionFactory sessionFactory;
+	
+	public void setSessionFactory(SessionFactory sf){
+		this.sessionFactory = sf; 
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Product> list() {
-		return (List<Product>)super.find("from Product");
+		Session session = this.sessionFactory.getCurrentSession();
+		Query q = session.createQuery("from Product");
+		List<Product> products = q.list();
+		return products;
 	}
 
 	@Override
 	public Product loadById(int id) {
-		return (Product)super.get(Product.class, id);
+		Session session = this.sessionFactory.getCurrentSession();
+		Product product = (Product)session.get(Product.class, id);
+		return product;
 	}
 
 	@Override
 	public void add(Product product) {
-		super.save(product);
-
+		Session session = this.sessionFactory.getCurrentSession();
+		session.save(product);
 	}
 
 	@Override
 	public void delete(Product product) {
-		super.delete(product);
+		Session session = this.sessionFactory.getCurrentSession();
+		session.delete(product);
 
+	}
+	
+	public void deleteById(int id) {
+		Session session = this.sessionFactory.getCurrentSession();
+		Product product = (Product)session.get(Product.class, id);
+		if(null != product){
+			session.delete(product);
+		}
 	}
 
 	@Override
 	public void update(Product product) {
-		super.update(product);
+		Session session = this.sessionFactory.getCurrentSession();
+		session.update(product);
 	}
 
 }
