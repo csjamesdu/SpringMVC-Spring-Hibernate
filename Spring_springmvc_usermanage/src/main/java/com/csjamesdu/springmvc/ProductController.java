@@ -43,7 +43,7 @@ public class ProductController {
 	
 	@RequestMapping(value="/editproduct")
 	public String editProduct(Model model, Integer id){
-		Product product = productService.loadProductById(id);
+		Product product = productService.getProductById(id);
 		model.addAttribute("product", product);
 		return "editProduct";
 	}

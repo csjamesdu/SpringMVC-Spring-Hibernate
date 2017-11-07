@@ -18,9 +18,9 @@ public interface CategoryDao {
 
 	void deleteById(int id);
 
-	void deleteLeaf(Category category);
+	void deleteLeafWithNewSession(Category category);
 
-	void deleteRoot(Category category);
+	void deleteRootWithNewSession(Category category);
 
 	Category loadById(int id);
 

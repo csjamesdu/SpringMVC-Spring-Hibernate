@@ -43,10 +43,12 @@
 	
 	<beans:bean id="productService" class="com.csjamesdu.springmvc.service.impl.ProductServiceImpl">
 		<beans:property name="productDao" ref="productDao"></beans:property>
+		<beans:property name="categoryDao" ref="categoryDao"></beans:property>
 	</beans:bean>
 	
 	<beans:bean id="categoryService" class="com.csjamesdu.springmvc.service.impl.CategoryServiceImpl">
 		<beans:property name="categoryDao" ref="categoryDao"></beans:property>
+		<beans:property name="productDao" ref="productDao"></beans:property>
 	</beans:bean>
 
 

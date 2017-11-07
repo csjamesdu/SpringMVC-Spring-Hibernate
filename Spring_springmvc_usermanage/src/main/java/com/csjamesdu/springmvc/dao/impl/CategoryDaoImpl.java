@@ -83,7 +83,7 @@ public class CategoryDaoImpl implements CategoryDao {
 	}
 	
 	@Override
-	public void deleteLeaf(Category category) {
+	public void deleteLeafWithNewSession(Category category) {
 		Session session = this.sessionFactory.openSession();
 		session.beginTransaction();
 		logger.info("@@@Category :" + category.getName() + " is DELETED@@@");
@@ -93,7 +93,7 @@ public class CategoryDaoImpl implements CategoryDao {
 	}
 	
 	@Override
-	public void deleteRoot(Category category) {
+	public void deleteRootWithNewSession(Category category) {
 		Session session = this.sessionFactory.openSession();
 		session.beginTransaction();
 		Set<Category> child_categories = category.getChildren();

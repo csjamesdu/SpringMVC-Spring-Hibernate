@@ -21,5 +21,7 @@ public interface CategoryService {
 	void updateParentAfterDelete(Category category);
 
 	void updateCategory(Category category);
+
+	void deleteCategoryWithProduct(Category category);
 	
 }

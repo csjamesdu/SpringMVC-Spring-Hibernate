@@ -27,7 +27,7 @@ public class Category {
 	private Set<Category> children = new HashSet<>();
 	@ManyToOne
 	private Category parent;
-	@OneToMany(mappedBy="category")
+	@OneToMany(mappedBy="category",fetch=FetchType.EAGER)
 	private Set<Product> products = new HashSet<>();
 	
 	public Set<Product> getProducts() {
