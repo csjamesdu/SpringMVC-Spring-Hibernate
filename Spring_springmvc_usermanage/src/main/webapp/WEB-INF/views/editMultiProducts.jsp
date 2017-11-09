@@ -19,6 +19,7 @@ function updateMultiProducts(){
 			<td>ID</td>
 			<td>NAME</td>
 			<td>PRICE</td>
+			<td>CATEGORY</td>
 			
 		</tr>
 		
@@ -27,7 +28,8 @@ function updateMultiProducts(){
 				
 				<td><input type="text" name="multiProducts[${status.index}].id" value="${product.id}" readonly disabled/></td>
 				<td><input type="text" name="multiProducts[${status.index}].name" value="${product.name}"></td>
-				<td><input type="text" name="multiProducts[${status.index}].price" value="${product.price}"></td>				
+				<td><input type="text" name="multiProducts[${status.index}].price" value="${product.price}"></td>	
+				<td><input type="text" name="multiProducts[${status.index}].category.id" value="${product.category.id}"></td>			
 			</tr>
 		</c:forEach>
 	</table>

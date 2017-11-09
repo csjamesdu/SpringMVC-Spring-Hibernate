@@ -2,6 +2,7 @@ package com.csjamesdu.springmvc.service;
 
 import java.util.List;
 
+import com.csjamesdu.springmvc.model.Product;
 import com.csjamesdu.springmvc.model.Category;
 
 public interface CategoryService {
@@ -23,5 +24,15 @@ public interface CategoryService {
 	void updateCategory(Category category);
 
 	void deleteCategoryWithProduct(Category category);
+
+	void autoGenerateCategoryTree();
+
+	void deleteRootCategory(Category category);
+
+	void addChildCategoryByCategory(Category category, Category parent_category);
+
+	List<Product> getProductsByCategoryId(int category_id);
+
+	void addProductUnderCategory(Product product, int category_id);
 	
 }

@@ -21,9 +21,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <a href="${pageContext.request.contextPath}/listproduct">Product List</a>
+  	<br>
+  	<br>
+  	<a href="${pageContext.request.contextPath}/listcategory">[CATEGORY]</a>
+  	<br>
+  	<br>
+    <a href="${pageContext.request.contextPath}/listproduct">[PRODUCT]</a>
     <br>
     <br>
-    <a href="${pageContext.request.contextPath}/users">User List</a>
+    <a href="${pageContext.request.contextPath}/users">[USER]</a>
   </body>
 </html>

@@ -18,10 +18,12 @@ public interface CategoryDao {
 
 	void deleteById(int id);
 
-	void deleteLeafWithNewSession(Category category);
+	void deleteLeaf(Category category);
 
-	void deleteRootWithNewSession(Category category);
+	void deleteNonLeaf(Category category);
 
 	Category loadById(int id);
+
+	void listCategoryTree(List<Category> categories, int parent_id);
 
 }

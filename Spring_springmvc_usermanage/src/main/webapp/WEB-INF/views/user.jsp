@@ -116,5 +116,9 @@
 			</c:forEach>
 		</table>
 	</c:if>
+	<br>
+	<br>
+	<a href="index">[INDEX]</a>
+	
 </body>
 </html>

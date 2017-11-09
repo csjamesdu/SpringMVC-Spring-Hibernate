@@ -21,7 +21,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    Operation Successful <br>
-    <a href="listproduct">return to the list</a>
+  	<br>
+  	<br>
+    OPERATION SUCCESSFUL! !<br>
+    <a href="listproduct">[PRODUCT]</a>
+    <br>
+    <br>
+    <a href="listcategory">[CATEGORY]</a>
   </body>
 </html>

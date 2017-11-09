@@ -21,6 +21,11 @@ function insertProductsRollback(){
 	document.specialOps.action="${pageContext.request.contextPath}/autoinsertrollback";
 	document.specialOps.submit();
 }
+
+function addProductUnderCategory(){
+	document.productadd.action="{pageContext.request.contextPath}/addproductundercategory";
+	document.productadd.submit();
+}
 </script>
 <style type="text/css">
 table, th, td {
@@ -56,7 +61,7 @@ th {
 </head>
 
 <body>
-<h1>Product List of ALL Products</h1>
+<h1>Product List Under Category</h1>
 
 <form name="productList" action="${pageContext.request.contextPath}/deletemultiproducts" method="post">
 	<table>
@@ -87,51 +92,38 @@ th {
 </form>
 
 <h1> Add Product </h1>
-<form:form action="addproduct" commandName="product">
+<form:form name="productadd" action="addproductundercategory" commandName="productDTO">
 	<table>
-			<c:if test="${!empty product.name}">
-				<tr>
-					<td><form:label path="id">
-							<spring:message text="ID" />
-						</form:label></td>
-					<td><form:input path="id" readonly="true" size="8"
-							disabled="true" /> <form:hidden path="id" /></td>
-				</tr>
-			</c:if>
 			<tr>
-				<td><form:label path="name">
+				<td><form:label path="product.name">
 						<spring:message text="Name" />
 					</form:label></td>
-				<td><form:input path="name" /></td>
+				<td><form:input path="product.name" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="price">
+				<td><form:label path="product.price">
 						<spring:message text="Price" />
 					</form:label></td>
-				<td><form:input path="price" /></td>
+				<td><form:input path="product.price" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="category.id">
+				<td><form:label path="category_id">
 						<spring:message text="CategoryID" />
 					</form:label></td>
-				<td><form:input path="category.id" /></td>
-			</tr>			
+				<td><form:input path="category_id" readonly="true"/></td>
+			</tr>
 			<tr>
-				<td colspan="2"><c:if test="${empty product.name}">
-						<input type="submit" value="<spring:message text="Add Product"/>" />
-					</c:if></td>
+				<td colspan="2">
+					<input type="submit" value="<spring:message text="Add Product"/>" />
+				</td>
 			</tr>
 		</table>
 </form:form>
-<br>
 <br>
 <a href="listcategory">[CATEGORY LIST]</a>
 <br>
 <br>
 <a href="index">[INDEX]</a>
-<br>
-<br>
-
 
 <%-- <h1> Special Operations </h1>
 <form name="specialOps" method="post">	

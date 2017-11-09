@@ -49,12 +49,12 @@ public class TestCategoryService extends UnitTestBase{
 		category2211.setName("testCat2-2-1-1");
 		
 		
-		service.addChildCategory(category1, 1);
-		service.addChildCategory(category2, 1);
-		service.addChildCategory(category21, 3);
-		service.addChildCategory(category22, 3);
-		service.addChildCategory(category221, 5);
-		service.addChildCategory(category2211, 6);
+		service.addChildCategory(category1, 2);
+		service.addChildCategory(category2, 2);
+		service.addChildCategory(category21, 4);
+		service.addChildCategory(category22, 4);
+		service.addChildCategory(category221, 6);
+		service.addChildCategory(category2211, 7);
 	}
 	
 	@Test
@@ -93,8 +93,15 @@ public class TestCategoryService extends UnitTestBase{
 		TestCategorySaveChild();
 		
 		service = super.getBean("categoryService");
-		Category category = service.getCategoryById(6);
+		Category category = service.getCategoryById(4);
 		service.deleteCategory(category);
 	
+	}
+	
+	@Test
+	public void TestAutoGen() {
+		service = super.getBean("categoryService");
+		service.addTopCategory();
+		service.autoGenerateCategoryTree();
 	}
 }
