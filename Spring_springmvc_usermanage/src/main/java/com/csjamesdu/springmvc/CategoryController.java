@@ -39,6 +39,11 @@ public class CategoryController {
 		this.categoryService = categoryService;
 	}
 	
+	@RequestMapping(value="/index")
+	public String indexControl() {
+		return "index";
+	}
+	
 	@RequestMapping(value="/listcategory", method=RequestMethod.GET)
 	public String listCategory(Model model) {
 		if(categoryService.listAllCategories().isEmpty()){
@@ -58,7 +63,7 @@ public class CategoryController {
 	}
 	
 	@RequestMapping(value="/updateaddcategory")
-	public String updateAddCategory(@ModelAttribute("categoryDTO")CategoryDTO categoryDTO) {
+	public String updateAddCategory(@ModelAttribute("categoryDTO")CategoryDTO categoryDTO) throws Exception {
 		Category category = categoryDTO.getCategory();
 		int parent_id = categoryDTO.getParent_id();
 		categoryService.addChildCategory(category, parent_id);

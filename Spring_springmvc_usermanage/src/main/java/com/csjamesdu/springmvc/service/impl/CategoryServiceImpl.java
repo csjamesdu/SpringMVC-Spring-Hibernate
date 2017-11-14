@@ -43,7 +43,8 @@ public class CategoryServiceImpl implements CategoryService{
 
 	@Override
 	@Transactional
-	public void addChildCategory(Category category, int parent_id) {
+	public void addChildCategory(Category category, int parent_id) {		
+		
 		Category child_category = new Category();
 		Category parent_category = categoryDao.getById(parent_id);
 				

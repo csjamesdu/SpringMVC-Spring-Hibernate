@@ -11,7 +11,7 @@
 	<annotation-driven />
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
-		up static resources in the ${webappRoot}/resources directory -->
+		up STATIC RESOURCES(js,css,img...) in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
@@ -92,5 +92,8 @@
 	<beans:bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>
+	
+	<!-- Define The Customized Global ExceptionHandler Bean-->
+	<beans:bean class="com.csjamesdu.springmvc.exception.CustomExceptionResolver"></beans:bean>
 
 </beans:beans>

@@ -19,9 +19,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
   </head>
-  
+  <title>ERROR PAGE</title>
   <body>
-    Ooops...a RuntimeException detected... <br>
-    <a href="listproduct">return to the list</a>
+    Ooops...an Error: ${errorMessage} occurred... <br>
+    <br>
+    <a href="index">[INDEX]</a>
+    <br>
+    <br>    
+    <a href="listproduct">[PRODUCT]</a>
+    <br>
+    <br>
+    <a href="listcategory">[CATEGORY]</a>
+    <br>
+    <br>
   </body>
 </html>

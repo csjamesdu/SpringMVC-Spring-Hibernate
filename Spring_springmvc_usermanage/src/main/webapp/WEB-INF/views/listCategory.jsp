@@ -70,10 +70,10 @@ th {
 			<th>NAME</th>
 			<th>GRADE</th>
 			<th>ISLEAF</th>
-			<th>ADD Category</th>
+			<th>ADD SUB-CATEGORY</th>
 			<th>EDIT</th>
 			<th>DELETE</th>
-			<th>ADD PPRODUCTS</th>
+			<th>SHOW/ADD PPRODUCTS</th>
 		</tr>
 		
 		<c:forEach items="${categoryList}" var="category">
@@ -81,20 +81,29 @@ th {
 				<td>${category.id}</td>
 				<td>${category.name}</td>
 				<td>${category.grade}</td>
-				<td>${category.isleaf}</td>	
-				<td><a href="addcategory?parent_id=${category.id}">ADD Sub-Category</a></td>
+				<td>
+					<c:if test="${category.isleaf==0}">
+						<a>NO</a>
+					</c:if>
+					<c:if test="${category.isleaf==1}">
+						<a>YES</a>
+					</c:if>
+				</td>	
+				<td><a href="addcategory?parent_id=${category.id}">Add Sub-Category</a></td>
 				<td><a href="editcategory?id=${category.id}">Edit</a></td>
 				<td>
 					<c:if test="${category.id == 2}">
 						<a href="deletecategory?id=${category.id}">Add Default Categories</a>
 					</c:if>
 					<c:if test="${category.id != 2}">
-						<a href="deletecategory?id=${category.id}">Delete</a>
+						<c:if test="${category.isleaf == 1}">
+							<a href="deletecategory?id=${category.id}">Delete</a>
+						</c:if>
 					</c:if>
 				</td>
 				<td>
-				<c:if test="${category.isleaf==1}">
-					<a href="showproductsundercategory?category_id=${category.id}">ADD Products</a>
+				<c:if test="${category.isleaf == 1}">
+					<a href="showproductsundercategory?category_id=${category.id}">Show/Add Products</a>
 				</c:if>
 				</td>				
 			</tr>
